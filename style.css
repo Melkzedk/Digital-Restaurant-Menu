@@ -1,0 +1,92 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f5f2;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #8b3a3a;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Menu Layout */
+.menu {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.category {
+  margin-bottom: 3rem;
+}
+
+.category h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #8b3a3a;
+  padding-bottom: 0.3rem;
+  color: #8b3a3a;
+}
+
+/* Menu Items */
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.item p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.price {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-weight: bold;
+  color: #8b3a3a;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #eee;
+  font-size: 0.9rem;
+  color: #555;
+}
