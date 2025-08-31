@@ -7,27 +7,36 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f8f5f2;
+  background: linear-gradient(135deg, #fff8f2, #ffeaea);
   color: #333;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header */
+/* Anime-style glow effect */
 header {
   background-color: #8b3a3a;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
+  position: relative;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px #ff9e9e, 0 0 20px #ff5e5e;
+  animation: pulseGlow 3s infinite ease-in-out;
 }
 
 .tagline {
   font-size: 1.2rem;
   font-style: italic;
+  background: linear-gradient(90deg, #ffdada, #ffffff, #ffdada);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
 }
 
 /* Menu Layout */
@@ -47,6 +56,8 @@ header h1 {
   border-bottom: 2px solid #8b3a3a;
   padding-bottom: 0.3rem;
   color: #8b3a3a;
+  position: relative;
+  animation: borderPulse 2s infinite ease-in-out;
 }
 
 /* Menu Items */
@@ -60,8 +71,15 @@ header h1 {
   background-color: #fff;
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(255, 134, 134, 0.2);
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px) scale(1.02);
+  animation: bounce 0.5s ease;
+  box-shadow: 0 0 15px rgba(255, 134, 134, 0.3);
 }
 
 .item h3 {
@@ -89,4 +107,47 @@ footer {
   background-color: #eee;
   font-size: 0.9rem;
   color: #555;
+}
+
+/* === Animations === */
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px #ff9e9e, 0 0 20px #ff5e5e;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffb3b3, 0 0 30px #ff7373;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: #8b3a3a;
+  }
+  50% {
+    border-color: #ff5e5e;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
